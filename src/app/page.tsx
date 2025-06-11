@@ -48,7 +48,7 @@ const SparkleOverlay = () => {
       const top = `${Math.random() * 100}%`;
       const delay = Math.random() * 4;
       const duration = 4 + Math.random() * 4;
-      const color = ["#ffffff", "#ff5de4", "#77faff", "#c084fc"][Math.floor(Math.random() * 4)];
+      const color = ["#FFFFFF", "#F40076", "#EBA6A9", "#FFC6AC", "#C4A29E"][Math.floor(Math.random() * 5)];
       return { size, left, top, delay, duration, color };
     });
     setSparkles(generated);
@@ -97,16 +97,20 @@ export default function Home() {
   }, [inView]);
 
   return (
-    <main className="relative flex flex-col items-center justify-center min-h-screen px-6 py-12 bg-black text-white font-sans overflow-hidden">
+    <main className="relative flex flex-col items-center justify-center min-h-screen px-6 py-12 bg-[#002A32] text-white font-sans overflow-hidden">
       <Head>
         <title>OSMOS | Pregame Hydration</title>
         <meta name="description" content="Electrolytes + Adaptogens for Feel-Good Focus" />
       </Head>
 
-      <motion.div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-purple-500 blur-3xl opacity-30 z-0" {...pulseBackground} />
-      <motion.div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-pink-500 blur-2xl opacity-20 z-0" {...pulseBackground} />
-      <motion.div className="absolute top-[50%] left-[50%] w-[300px] h-[300px] rounded-full bg-indigo-500 blur-2xl opacity-20 z-0" {...pulseBackground} />
+      <motion.div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-[#F40076] blur-3xl opacity-30 z-0" {...pulseBackground} />
+      <motion.div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-[#FFC6AC] blur-2xl opacity-20 z-0" {...pulseBackground} />
+      <motion.div className="absolute top-[50%] left-[50%] w-[300px] h-[300px] rounded-full bg-[#C4A29E] blur-2xl opacity-20 z-0" {...pulseBackground} />
       <SparkleOverlay />
+
+
+
+
 
       {/* HERO SECTION */}
       <motion.section {...fadeUp} className="w-full max-w-4xl text-center mb-20">
@@ -122,7 +126,7 @@ export default function Home() {
           transition={{ delay: 0.4, duration: 1 }}
           className="text-lg text-gray-300 mb-6"
         >
-          Rave-safe hydration, adaptogens, and clarity — no sugar, no crash.
+          Party-safe hydration, adaptogens, and clarity — no sugar, no crash.
         </motion.p>
         <motion.a
           whileHover={{ scale: 1.05 }}
@@ -160,7 +164,14 @@ export default function Home() {
           </p>
         </motion.div>
       </motion.section>
-
+      {/* MISSION SECTION */}
+      <motion.section {...fadeUp} className="max-w-3xl w-full text-center mb-16">
+        <h2 className="text-2xl font-bold mb-4 text-[#F40076]">Why We Made OSMOS</h2>
+        <p className="text-base text-[#C4A29E]">
+          Every hydration brand screams gym bro. OSMOS was built for the pregame — to support clarity, chill, and connection.
+          We wanted something that <em>feels</em> as good as it works — no sugar, no crash, no treadmill vibes.
+        </p>
+      </motion.section>
       {/* COMPARISON TABLE */}
       <motion.section {...fadeUp} className="w-full max-w-5xl mb-20">
         <motion.div className="overflow-hidden rounded-2xl border border-gray-700 shadow-xl">
@@ -206,6 +217,16 @@ export default function Home() {
             </tbody>
           </table>
         </motion.div>
+      </motion.section>
+
+      {/* URGENCY SECTION */}
+      <motion.section {...fadeUp} className="max-w-xl w-full text-center mb-12">
+        <div className="inline-block bg-[#F40076] text-white text-sm px-4 py-2 rounded-full mb-3 shadow-md">
+          🚨 Limited Early Access
+        </div>
+        <p className="text-base text-[#FFC6AC]">
+          We’re opening just <strong>250 early access spots</strong> before launch. Be first in line for free drops, exclusive flavors, and product testing.
+        </p>
       </motion.section>
 
       {/* WAITLIST FORM */}
